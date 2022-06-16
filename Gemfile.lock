@@ -54,6 +54,11 @@ GEM
     activerecord (7.0.3)
       activemodel (= 7.0.3)
       activesupport (= 7.0.3)
+    activerecord-jdbc-adapter (50.0)
+      activerecord (>= 2.2)
+    activerecord-jdbcpostgresql-adapter (50.0)
+      activerecord-jdbc-adapter (~> 50.0)
+      jdbc-postgres (>= 9.4, < 43)
     activestorage (7.0.3)
       actionpack (= 7.0.3)
       activejob (= 7.0.3)
@@ -102,6 +107,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jdbc-postgres (42.2.25)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -216,6 +222,7 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
+  activerecord-jdbcpostgresql-adapter
   bootsnap
   capybara
   debug
