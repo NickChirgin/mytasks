@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  tasks.text: MyString
+  tasks.isCompleted: false
+
+two:
+  title: MyString
+  tasks.text: MyString
+  tasks.isCompleted: false

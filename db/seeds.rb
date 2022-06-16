@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+    todos = [{stage_id: 2, text: 'Позвонить заказчику', isCompleted: true}
+            ]
+
+    todos.each do |attributes|
+    Task.create(attributes) unless Task.where(attributes).first
+    end
