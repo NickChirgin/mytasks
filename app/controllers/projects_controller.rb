@@ -12,6 +12,6 @@ class ProjectsController < ApplicationController
 
   def update
     active_task = Task.find(params[:id])
-    active_task.update(isCompleted: !params[:isCompleted])
+    active_task.update({isCompleted: !params[:isCompleted]})
   end
 end
