@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   post "/todos", to: "projects#create"
+  patch "/projects/:stage_id/todos/:id", to: "projects#update"
 end

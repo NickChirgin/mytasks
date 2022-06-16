@@ -9,4 +9,9 @@ class ProjectsController < ApplicationController
     @stage = Stage.new({title: params.require(:title)})
     @stage.save
   end
+
+  def update
+    active_task = Task.find(params[:id])
+    active_task.update(isCompleted: !params[:isCompleted])
+  end
 end
