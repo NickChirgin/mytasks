@@ -80,6 +80,6 @@ development:
 #
 # production:
 #   <<: *default
-#   database: mytasks_production
-#   username: mytasks
-#   password: <%= ENV["MYTASKS_DATABASE_PASSWORD"] %>
+  database: d3s73juhhfel2a
+  username: "xhvzjinltfnqca"
+  password: "ecc7dca98046c1bd10387cbaecee9845a3dc4fb6d620ed64fa2c549e4642f065"
