@@ -6,12 +6,20 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @stage = Stage.new({title: params.require(:title)})
-    @stage.save
+    if Stage.where(title: params[:title]).exists?
+      current_category = Stage.find(params[:title])
+      new_task = Task.new({stage_id: current_category[:id], text: params[:text], isCompleted: false})
+      new_task.save
+    else
+      @stage = Stage.new({title: params.require(:title)})
+      @stage.save
+      new_task = Task.new({stage_id: @stage[:id], text: params[:text], isCompleted: false})
+      new_task.save
+    end
   end
 
   def update
     active_task = Task.find(params[:id])
-    active_task.update({isCompleted: !params[:isCompleted]})
+    active_task.update({isCompleted: !active_task[:isCompleted]})
   end
 end
