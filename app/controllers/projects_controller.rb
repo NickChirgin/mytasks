@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
 
   def create
     if Stage.where(title: params[:title]).exists?
-      current_category = Stage.find(params[:title])
+      current_category = Stage.find_by(title: params[:title])
       new_task = Task.new({stage_id: current_category[:id], text: params[:text], isCompleted: false})
       new_task.save
     else
